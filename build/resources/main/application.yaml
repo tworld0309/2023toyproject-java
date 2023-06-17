@@ -1,0 +1,72 @@
+
+server:
+  shutdown: graceful
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8888 # 9999
+
+spring:
+  application:
+    name: springboot3
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: hotel
+    password: hotel12!@
+    url: jdbc:mariadb://146.56.114.57:3306/hotel
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+    open-in-view: true
+    show_sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  graphql:
+    path: /graphql
+    graphiql:
+      path: /graphiql
+      enabled: true
+    schema:
+      locations: classpath:graphql/**/
+      file-extensions: .graphqls,.gqls
+      introspection:
+        enabled: true
+        printer:
+          enabled: true
+    websocket:
+      connection-init-timeout: 60s
+      path:
+    rsocket:
+      mapping:
+    cors:
+      allow-credentials:
+      allowed-headers:
+      allowed-methods:
+      allowed-origin-patterns:
+      allowed-origins:
+      exposed-headers:
+      max-age: 1800s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        # exclude: threaddump, heapdump
+  endpoint:
+    health:
+      show-details: always

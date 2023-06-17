@@ -1,0 +1,165 @@
+buildscript{
+    ext{
+        queryDslVersion="5.0.0"
+        mapstructVersion = "1.4.2.Final"
+
+        snippetsDir = file("$buildDir/generated-snippets") // restdocs
+    }
+}
+
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.4'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'org.asciidoctor.jvm.convert' version "3.3.2"
+    id 'com.google.osdetector' version '1.7.0'
+
+}
+
+group = 'com'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+
+    asciidoctorExtensions // Asciidoctor 의존그룹 지정 -> :asciidoctor task 실행시 내부적으로 그룹 지정
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2022.0.1'
+    }
+}
+
+
+dependencies {
+
+    // hikari - connection pool 보완 (enterprise 환경용)
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // mac용 netty 라이브러리 추가
+    // web-client사용을 위한 mac arm에서는 native library를 호출할 수 없어 아래 내용을 추가하였음
+    if (osdetector.arch.equals("aarch_64")){
+        implementation "io.netty:netty-resolver-dns-native-macos:4.1.79.Final:osx-aarch_64"
+    }
+
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2"
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //Querydsl 추가
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+    // openapi
+    implementation 'org.springdoc:springdoc-openapi-starter-common:2.0.2'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+
+    // Mapstruct
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+
+    // validationx
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // prometheus
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+
+    // Spring RestDocs
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    // mockmvc에 Spring REST Docs 추가를 위한 라이브러리
+    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-restassured'
+    // *.adoc 파일의 {snippets}를 자동으로 설정
+
+    // jwt
+    // implementation 'io.jsonwebtoken:jjwt'
+
+
+    // spring for grqphql
+    implementation 'org.springframework.boot:spring-boot-starter-graphql'
+
+}
+
+tasks.named('test') { // :test task 실행시 API문서 생성 Snippet 경로 설정
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+tasks.named('asciidoctor') { // :asciidoctor task 실행시 Asciidoctor 기능 사용을 위한 설정
+    configurations "asciidoctorExtensions"
+    inputs.dir snippetsDir
+    dependsOn test
+}
+
+asciidoctor.doFirst {
+    delete file('src/main/resources/static/docs')
+}
+
+// :build task 실행 전에 실행되는 task. index.html 파일을 /src/main/resources/static/doc 으로 복사
+// 복사된 index.html은 API 문서를 <외부에> 저장하기 위한 용도로 사용
+task copyDocument(type: Copy) {
+    dependsOn asciidoctor // :asciidoctor task가 실행된 후에 task가 실행되도록 의존성 설정
+    from file("${asciidoctor.outputDir}") // 설정 경로에 생성되는 index.html 복사
+    into file("src/main/resources/static/docs") // 해당 경로에 index.html 붙여넣기
+}
+
+build {
+    dependsOn copyDocument // :build task 전에 :copyDocument task 가 먼저 실행되도록 의존성 설정
+}
+
+bootJar { // 앱 시행 파일이 생성하는 :bootJar task 설정
+    dependsOn copyDocument // :bootJar task 전에 :copyDocument task 가 먼저 실행되도록 의존성 설정
+    // Asciidoctor가 생성하는 index.html을 <Jar 파일 안>에 추가
+    // 따라서 웹 브라우저에 접속(http://localhost:8080/docs/index.html)후 API 문서 확인 가능
+    from ("${asciidoctor.outputDir}") {
+        into 'static/docs'
+    }
+}
+
+compileJava{
+    dependsOn clean
+}
+
+// querydsl
+def querydslSrcDir = 'src/main/generated'
+sourceSets {
+    main {
+        java {
+            srcDirs += [ querydslSrcDir ]
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
+        }
+    }
+}
+
+clean {
+    delete file('src/main/generated')
+}
