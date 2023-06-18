@@ -1,7 +1,7 @@
 package com.hotel.serverapi.controller;
 
-import com.boot3.data.dto.request.UserRequestDto;
-import com.boot3.service.UserService;
+import com.hotel.serverapi.data.dto.request.UserRequestDto;
+import com.hotel.serverapi.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

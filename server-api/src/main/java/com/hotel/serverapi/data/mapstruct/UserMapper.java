@@ -1,7 +1,7 @@
 package com.hotel.serverapi.data.mapstruct;
 
-import com.boot3.data.dto.request.UserRequestDto;
-import com.boot3.data.entity.TbUserEntity;
+import com.hotel.serverapi.data.dto.request.UserRequestDto;
+import com.hotel.serverapi.data.entity.TbUserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueMappingStrategy;
 import org.mapstruct.factory.Mappers;

@@ -21,7 +21,7 @@ public class TbRoomEntity {
     @Id
     @ManyToOne
     @JoinColumn(name = "hotel_cd")
-    private String hotelCd;
+    private TbHotelEntity hotelCd;
 
     @Id
     @Column(name = "room_cd")

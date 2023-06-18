@@ -1,6 +1,6 @@
 package com.hotel.serverapi.data.repository;
 
-import com.boot3.data.entity.TbUserEntity;
+import com.hotel.serverapi.data.entity.TbUserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

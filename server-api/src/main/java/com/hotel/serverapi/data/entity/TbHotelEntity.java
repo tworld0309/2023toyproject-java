@@ -6,6 +6,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -21,6 +23,11 @@ public class TbHotelEntity {
     @Id
     @Column(name = "hotel_cd")
     private String hotelCd;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "tbHotelEntity")
+    @ToString.Exclude
+    @Builder.Default
+    private List<TbRoomEntity> child = new ArrayList<>();
 
     @Column(name = "hotel_nm")
     private String hotelNm;

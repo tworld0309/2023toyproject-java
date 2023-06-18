@@ -18,8 +18,8 @@ import java.time.LocalDate;
 @Table(name = "TB_CM_DT_CODE", schema = "hotel")
 public class TbCmDtCodeEntity {
     @ManyToOne
-    @JoinColumn(name = "code")
-    private String code;
+    @JoinColumn(name = "code", insertable = false, updatable = false)
+    private TbCmCodeEntity code;
 
     @Id
     @Column(name = "dt_code")

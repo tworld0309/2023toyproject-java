@@ -1,9 +1,9 @@
 package com.hotel.serverapi.service;
 
 
-import com.boot3.data.dto.request.UserRequestDto;
-import com.boot3.data.mapstruct.UserMapper;
-import com.boot3.data.repository.UserRepository;
+import com.hotel.serverapi.data.dto.request.UserRequestDto;
+import com.hotel.serverapi.data.mapstruct.UserMapper;
+import com.hotel.serverapi.data.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
