@@ -23,15 +23,14 @@ public class TbAssignEntity {
 
     @ManyToOne
     @JoinColumn(name = "reservation_id")
-    private String reservationId;
+    private TbReservationEntity reservationId;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_cd")
-    private String hotelCd;
-
-    @ManyToOne
-    @JoinColumn(name = "room_cd")
-    private String roomCd;
+    @JoinColumns({
+            @JoinColumn(name="room_cd"),
+            @JoinColumn(name="hotel_cd")
+    })
+    private TbRoomEntity tbRoomEntity;
 
     @Column(name = "payment_dt")
     private LocalDate paymentDt;

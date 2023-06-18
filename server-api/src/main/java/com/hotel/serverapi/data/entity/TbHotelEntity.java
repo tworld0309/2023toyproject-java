@@ -24,7 +24,7 @@ public class TbHotelEntity {
     @Column(name = "hotel_cd")
     private String hotelCd;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy = "tbHotelEntity")
+    @OneToMany(fetch=FetchType.LAZY)
     @ToString.Exclude
     @Builder.Default
     private List<TbRoomEntity> child = new ArrayList<>();
