@@ -1,6 +1,6 @@
 package com.hotel.serverapi.data.mapstruct;
 
-import com.hotel.serverapi.data.dto.request.UserRequestDto;
+import com.hotel.serverapi.data.dto.response.TbUserResponseDTO;
 import com.hotel.serverapi.data.entity.TbUserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueMappingStrategy;
@@ -14,7 +14,7 @@ public interface UserMapper {
 
 
 //    @Mapping(target="pwd", expression="java(entity.getEncryptedPwd())")
-//    UserRecordDTO toDto(TbUserEntity entity);
+    TbUserResponseDTO toDto(String userId);
 
 
 
@@ -23,7 +23,7 @@ public interface UserMapper {
 //    TbUserEntity toEntity(UserSaveReqDTO dto);
 
 
-    List<UserRequestDto> toDtoList(List<TbUserEntity> entityList);
+    List<TbUserResponseDTO> toDtoList(List<TbUserEntity> entityList);
 
     //List<TbUserEntity> toEntityList(List<UserSaveReqDTO> dtoList);
 
