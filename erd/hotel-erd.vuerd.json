@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -117,
-    "scrollLeft": -130,
-    "zoomLevel": 0.8,
+    "scrollTop": -101,
+    "scrollLeft": -384,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -711,7 +711,7 @@
           "active": false,
           "left": 662.5,
           "top": 673,
-          "zIndex": 7,
+          "zIndex": 52,
           "widthName": 60,
           "widthComment": 60
         },
@@ -725,7 +725,7 @@
           {
             "name": "code",
             "comment": "공통코드",
-            "dataType": "char(2)",
+            "dataType": "char(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -888,7 +888,7 @@
           "active": false,
           "left": 1597,
           "top": 20,
-          "zIndex": 8,
+          "zIndex": 15,
           "widthName": 75.0859375,
           "widthComment": 60
         },
@@ -902,7 +902,7 @@
           {
             "name": "code",
             "comment": "공통코드",
-            "dataType": "char(2)",
+            "dataType": "char(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -925,7 +925,7 @@
           {
             "name": "dt_code",
             "comment": "공통세부코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -940,7 +940,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 69.469970703125,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "2ccd2c2d-1bc3-4d92-9342-92be891df465"
@@ -1088,7 +1088,7 @@
           "active": false,
           "left": 1594,
           "top": 274,
-          "zIndex": 2,
+          "zIndex": 49,
           "widthName": 94.97592163085938,
           "widthComment": 69.469970703125
         },
@@ -1486,7 +1486,7 @@
           {
             "name": "hotel_cd",
             "comment": "호텔 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1501,7 +1501,7 @@
               "pfk": true,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "4f29d4a1-7516-4e2c-9821-ad8c80e3084a"
@@ -1509,7 +1509,7 @@
           {
             "name": "room_cd",
             "comment": "룸 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1524,7 +1524,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "36f16787-e6b1-4cc6-ae0a-c085a6474a8c"
@@ -1879,7 +1879,7 @@
           "active": false,
           "left": 1163.5,
           "top": 32,
-          "zIndex": 3,
+          "zIndex": 30,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1893,7 +1893,7 @@
           {
             "name": "hotel_cd",
             "comment": "호텔 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1908,7 +1908,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "3bfa0789-a24f-4254-b376-4576c9c7e218"
@@ -1985,7 +1985,7 @@
           {
             "name": "hotel_nation_cd",
             "comment": "국가코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2000,7 +2000,7 @@
               "pfk": false,
               "widthName": 86.09684753417969,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "a1549a52-1013-4906-ab66-4a1c08ebecb4"
@@ -2008,7 +2008,7 @@
           {
             "name": "hotel_city_cd",
             "comment": "도시코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2023,7 +2023,7 @@
               "pfk": false,
               "widthName": 71.19888305664062,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "0f92dfd1-4f05-447b-aa9c-05f8a24ce9fd"
@@ -2123,7 +2123,7 @@
           {
             "name": "hotel_phone",
             "comment": "호텔_전화번호",
-            "dataType": "varchar(10)",
+            "dataType": "varchar(15)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2138,7 +2138,7 @@
               "pfk": false,
               "widthName": 68.74189758300781,
               "widthComment": 73.83796691894531,
-              "widthDataType": 63.35986328125,
+              "widthDataType": 61.65687561035156,
               "widthDefault": 60
             },
             "id": "dea19d4d-e3fe-4984-bac8-213fff4794b5"
@@ -2240,7 +2240,7 @@
           "active": false,
           "left": 1173.75,
           "top": 543.75,
-          "zIndex": 5,
+          "zIndex": 55,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2454,7 +2454,7 @@
           {
             "name": "hotel_cd",
             "comment": "호텔 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2469,7 +2469,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "18b69acc-60af-46f6-970b-0a0783bdbae7"
@@ -2477,7 +2477,7 @@
           {
             "name": "room_cd",
             "comment": "룸 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2492,7 +2492,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
             "id": "ba23504f-4640-4870-a847-6ef93995d10b"

@@ -19,8 +19,8 @@ CREATE TABLE TB_ASSIGN
 (
   assign_id              varchar(10) NOT NULL COMMENT '배정번호',
   reservation_id         varchar(10) NOT NULL COMMENT '예약번호',
-  hotel_cd               char(2)     NOT NULL COMMENT '호텔 코드',
-  room_cd                char(2)     NOT NULL COMMENT '룸 코드',
+  hotel_cd               varchar(20) NOT NULL COMMENT '호텔 코드',
+  room_cd                varchar(20) NOT NULL COMMENT '룸 코드',
   payment_dt             date        NULL     COMMENT '결제일시',
   payment_cd             char(2)     NULL     COMMENT '결제수단 코드',
   payment_price          int         NULL     COMMENT '결제 금액(보증금)',
@@ -43,7 +43,7 @@ CREATE TABLE TB_ASSIGN
 
 CREATE TABLE TB_CM_CODE
 (
-  code        char(2)      NOT NULL COMMENT '공통코드',
+  code        char(20)     NOT NULL COMMENT '공통코드',
   name        varchar(20)  NULL     COMMENT '공통코드명',
   description varchar(100) NULL     COMMENT '설명',
   reg_id      varchar(20)  NULL     COMMENT '등록자ID',
@@ -55,8 +55,8 @@ CREATE TABLE TB_CM_CODE
 
 CREATE TABLE TB_CM_DT_CODE
 (
-  code    char(2)      NOT NULL COMMENT '공통코드',
-  dt_code char(2)      NOT NULL COMMENT '공통세부코드',
+  code    char(20)     NOT NULL COMMENT '공통코드',
+  dt_code varchar(20)  NOT NULL COMMENT '공통세부코드',
   dt_name varchar(20)  NULL     COMMENT '공통세부코드명',
   dt_desc varchar(100) NULL     COMMENT '설명',
   reg_id  varchar(20)  NULL     COMMENT '등록자ID',
@@ -68,17 +68,17 @@ CREATE TABLE TB_CM_DT_CODE
 
 CREATE TABLE TB_HOTEL
 (
-  hotel_cd           char(2)      NOT NULL COMMENT '호텔 코드',
+  hotel_cd           varchar(20)  NOT NULL COMMENT '호텔 코드',
   hotel_nm           varchar(30)  NULL     COMMENT '호텔 명',
   hotel_grade_cd     char(2)      NULL     COMMENT '호텔 등급 코드',
   hotel_establish_dt date         NULL     COMMENT '호텔 설립 일시',
-  hotel_nation_cd    char(2)      NULL     COMMENT '국가코드',
-  hotel_city_cd      char(2)      NULL     COMMENT '도시코드',
+  hotel_nation_cd    varchar(20)  NULL     COMMENT '국가코드',
+  hotel_city_cd      varchar(20)  NULL     COMMENT '도시코드',
   tour_info          varchar(100) NULL     COMMENT '관광지 정보',
   hotel_address      varchar(50)  NULL     COMMENT '호텔_기본주소',
   hotel_address2     varchar(100) NULL     COMMENT '호텔_상세주소',
   hotel_zipcode      varchar(10)  NULL     COMMENT '호텔_우편번호',
-  hotel_phone        varchar(10)  NULL     COMMENT '호텔_전화번호',
+  hotel_phone        varchar(15)  NULL     COMMENT '호텔_전화번호',
   reg_id             varchar(20)  NULL     COMMENT '등록자ID',
   reg_dt             date         NULL     COMMENT '등록일시',
   mod_id             varchar(20)  NULL     COMMENT '수정자ID',
@@ -119,8 +119,8 @@ CREATE TABLE TB_RESERVATION
 
 CREATE TABLE TB_ROOM
 (
-  hotel_cd             char(2)     NOT NULL COMMENT '호텔 코드',
-  room_cd              char(2)     NOT NULL COMMENT '룸 코드',
+  hotel_cd             varchar(20) NOT NULL COMMENT '호텔 코드',
+  room_cd              varchar(20) NOT NULL COMMENT '룸 코드',
   room_nm              varchar(30) NULL     COMMENT '룸 명',
   room_floor           int         NULL     COMMENT '층',
   room_grade_cd        char(2)     NULL     COMMENT '등급 코드',
