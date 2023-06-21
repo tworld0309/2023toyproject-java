@@ -6,6 +6,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
@@ -20,6 +22,11 @@ public class TbUserEntity {
     @Id
     @Column(name = "cust_id")
     private String custId;
+
+    @OneToMany(fetch=FetchType.LAZY )
+    @ToString.Exclude
+    @Builder.Default
+    private List<TbReservationEntity> child = new ArrayList<>();
 
     @Column(name = "cust_password")
     private String custPassword;

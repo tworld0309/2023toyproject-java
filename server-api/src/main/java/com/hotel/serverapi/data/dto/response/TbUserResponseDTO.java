@@ -1,4 +1,4 @@
-package com.hotel.serverapi.data.dto;
+package com.hotel.serverapi.data.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class TbUserDTO {
+public class TbUserResponseDTO {
     private String custId;
     private String custPassword;
     private String custEmail;

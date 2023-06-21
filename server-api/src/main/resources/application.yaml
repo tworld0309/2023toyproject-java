@@ -11,17 +11,17 @@ server:
 
 spring:
   application:
-    name: springboot3
+    name: hotel-mono-api
   main:
     allow-bean-definition-overriding: true
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    username: hotel
-    password: hotel12!@
-    url: jdbc:mariadb://146.56.114.57:3306/hotel
+    username: ENC(TW5Ru+JEnQXN78acqNe4OQP1W3W8pmPZ)
+    password: ENC(kaKrvVahaZiiyYNDM7xCh5M3DPyVAtiy)
+    url: ENC(orAfzV4Q6NOi+SsFCpCLV0KSkNcHbkq00r2tmFCR7vfQ4TnF69svWQIFdp6ELiAu)
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database-platform: org.hibernate.dialect.MariaDBDialect
     properties:
       hibernate:
@@ -70,3 +70,8 @@ management:
   endpoint:
     health:
       show-details: always
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    password: A421080gsm

@@ -1,0 +1,35 @@
+
+server:
+  port: 8887 # 9999
+
+spring:
+  application:
+    name: hotel-mono-batch
+  batch:
+    job:
+      name: ${job.name:NONE}
+      enabled: false
+    jdbc:
+      initialize-schema: ALWAYS
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ENC(TW5Ru+JEnQXN78acqNe4OQP1W3W8pmPZ)
+    password: ENC(kaKrvVahaZiiyYNDM7xCh5M3DPyVAtiy)
+    url: ENC(orAfzV4Q6NOi+SsFCpCLV0KSkNcHbkq00r2tmFCR7vfQ4TnF69svWQIFdp6ELiAu)
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+    open-in-view: true
+    show_sql: true
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    password: A421080gsm

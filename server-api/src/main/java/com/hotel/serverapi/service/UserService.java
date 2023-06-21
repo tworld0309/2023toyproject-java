@@ -1,9 +1,10 @@
 package com.hotel.serverapi.service;
 
 
-import com.boot3.data.dto.request.UserRequestDto;
-import com.boot3.data.mapstruct.UserMapper;
-import com.boot3.data.repository.UserRepository;
+import com.hotel.serverapi.data.dto.request.UserRequestDto;
+import com.hotel.serverapi.data.dto.response.TbUserResponseDTO;
+import com.hotel.serverapi.data.mapstruct.UserMapper;
+import com.hotel.serverapi.data.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +16,13 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<UserRequestDto> getUserList() {
+    public List<TbUserResponseDTO> getUserList() {
         return UserMapper.INSTANCE.toDtoList(userRepository.findAll());
     }
 
-//    public UserRecordDTO getUserInfo(UserRecordReqDTO dto) {
-//        return UserMapper.INSTANCE.toDto(userRepository.findByUserId(dto.userId()));
-//    }
+    public TbUserResponseDTO getUserInfo(UserRequestDto dto) {
+        return userRepository.findByUserId(dto);
+    }
 //
 //    public UserDTO userInfoByQuerydsl(UserRecordReqDTO dto) {
 //        return userRepository.userInfoByQuerydsl(dto);

@@ -24,7 +24,7 @@ public class TbReservationEntity {
 
     @ManyToOne
     @JoinColumn(name = "cust_id")
-    private String custId;
+    private TbUserEntity custId;
 
     @Column(name = "payment_dt")
     private LocalDate paymentDt;
