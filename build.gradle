@@ -18,21 +18,12 @@ plugins {
 group = 'boot3'
 version = '1.0.0'
 
+
+
 allprojects {
     apply plugin: 'java'
     sourceCompatibility = '17'
     targetCompatibility = '17'
-}
-
-subprojects {
-    group = 'hotel-java'
-    version = '1.0.0'
-    sourceCompatibility = '17'
-
-    apply plugin: 'java'
-    apply plugin: 'java-library'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
 
     configurations {
         compileOnly {
@@ -41,6 +32,13 @@ subprojects {
 
         asciidoctorExtensions // Asciidoctor 의존그룹 지정 -> :asciidoctor task 실행시 내부적으로 그룹 지정
     }
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+
 
     repositories {
         mavenCentral()
@@ -91,8 +89,7 @@ subprojects {
         annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
         annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 
-
-        // validationx
+        // validation
         implementation 'org.springframework.boot:spring-boot-starter-validation'
 
         // prometheus
@@ -117,8 +114,12 @@ subprojects {
 
         implementation 'com.google.collections:google-collections:1.0'
     }
+}
 
-
+subprojects {
+    group = 'hotel-java'
+    version = '1.0.0'
+    sourceCompatibility = '17'
 
 }
 
