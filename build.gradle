@@ -22,8 +22,11 @@ version = '1.0.0'
 
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'application'
     sourceCompatibility = '17'
     targetCompatibility = '17'
+
+    mainClassName = 'com.hotel.serverapi.ServerApiApplication'
 
     configurations {
         compileOnly {
@@ -151,14 +154,16 @@ build {
     dependsOn copyDocument // :build task 전에 :copyDocument task 가 먼저 실행되도록 의존성 설정
 }
 
-//bootJar { // 앱 시행 파일이 생성하는 :bootJar task 설정
-//    dependsOn copyDocument // :bootJar task 전에 :copyDocument task 가 먼저 실행되도록 의존성 설정
-//    // Asciidoctor가 생성하는 index.html을 <Jar 파일 안>에 추가
-//    // 따라서 웹 브라우저에 접속(http://localhost:8080/docs/index.html)후 API 문서 확인 가능
-//    from ("${asciidoctor.outputDir}") {
-//        into 'static/docs'
-//    }
-//}
+bootJar { // 앱 시행 파일이 생성하는 :bootJar task 설정
+
+    dependsOn copyDocument // :bootJar task 전에 :copyDocument task 가 먼저 실행되도록 의존성 설정
+    // Asciidoctor가 생성하는 index.html을 <Jar 파일 안>에 추가
+    // 따라서 웹 브라우저에 접속(http://localhost:8080/docs/index.html)후 API 문서 확인 가능
+    from ("${asciidoctor.outputDir}") {
+        into 'static/docs'
+    }
+}
+
 
 compileJava{
     dependsOn clean
