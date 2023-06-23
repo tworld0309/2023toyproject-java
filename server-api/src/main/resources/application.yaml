@@ -21,7 +21,7 @@ spring:
     url: ENC(orAfzV4Q6NOi+SsFCpCLV0KSkNcHbkq00r2tmFCR7vfQ4TnF69svWQIFdp6ELiAu)
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     database-platform: org.hibernate.dialect.MariaDBDialect
     properties:
       hibernate:
