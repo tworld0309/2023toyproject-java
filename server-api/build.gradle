@@ -5,7 +5,9 @@ dependencies {
 
 
 tasks.jar {
-    enabled = true
+    enabled = false
 }
+
+
 
 tasks.register('prepareKotlinBuildScriptModel') {}

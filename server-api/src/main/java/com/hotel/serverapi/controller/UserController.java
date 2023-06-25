@@ -22,14 +22,14 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/user")
+    @GetMapping("/cust")
     @Operation(description = "UserList 조회하기")
     public List<TbUserResponseDTO> userList(){
         return userService.getUserList();
     }
 
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/cust/{userId}")
     @Operation(description = "특정 사용자 조회하기")
     public TbUserResponseDTO userInfo(@PathVariable String userId){
 

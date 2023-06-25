@@ -164,6 +164,9 @@ bootJar { // 앱 시행 파일이 생성하는 :bootJar task 설정
     }
 }
 
+jar {
+    enabled = false
+}
 
 compileJava{
     dependsOn clean
