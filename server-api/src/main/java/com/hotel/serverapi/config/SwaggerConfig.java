@@ -19,8 +19,8 @@ public class SwaggerConfig {
     public OpenAPI customizeGlobalApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("SpringBoot 3 API Document")
-                        .description("SpringBoot 3 API")
+                        .title("Hotel Reservation API Document")
+                        .description("Hotel Reservation")
                 );
     }
 
@@ -44,26 +44,35 @@ public class SwaggerConfig {
                 .build();
     }
 
-    @Bean // Redis Ranking API (Sample)
-    public GroupedOpenApi redisRankingApi(OperationCustomizer addGlobalHeader) {
-        String[] paths = {"/redis/**"};
+    @Bean // reservation
+    public GroupedOpenApi reservationApi(OperationCustomizer addGlobalHeader) {
+        String[] paths = {"/reservation/**"};
         return GroupedOpenApi.builder()
-                .group("REDIS API")
+                .group("Reservation API")
                 .pathsToMatch(paths)
                 .addOperationCustomizer(addGlobalHeader)
                 .build();
     }
 
-    @Bean // Portal Blog API (Sample)
-    public GroupedOpenApi portalBlodApi(OperationCustomizer addGlobalHeader) {
-        String[] paths = {"/blog/**"};
+    @Bean // Stock
+    public GroupedOpenApi stockApi(OperationCustomizer addGlobalHeader) {
+        String[] paths = {"/stock/**"};
         return GroupedOpenApi.builder()
-                .group("BLOG API")
+                .group("Stock API")
                 .pathsToMatch(paths)
                 .addOperationCustomizer(addGlobalHeader)
                 .build();
     }
 
+    @Bean // Stock
+    public GroupedOpenApi assignApi(OperationCustomizer addGlobalHeader) {
+        String[] paths = {"/assign/**"};
+        return GroupedOpenApi.builder()
+                .group("Assign API")
+                .pathsToMatch(paths)
+                .addOperationCustomizer(addGlobalHeader)
+                .build();
+    }
 
 
     @Bean // Global Parameter

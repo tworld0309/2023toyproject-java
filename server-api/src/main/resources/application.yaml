@@ -75,3 +75,13 @@ jasypt:
   encryptor:
     bean: jasyptStringEncryptor
     password: A421080gsm
+
+springdoc:
+  swagger-ui:
+    path: swagger.html #http://localhost:8080/swagger.html 로 호출
+  #  packages-to-scan:
+  #    - cf.portal
+  #    - cf.sysmgt.func
+  #    - cf.comfunc.func
+  override-with-generic-response: false # Default 응답 메시지(@ControllerAdvice) 제외
+  default-produces-media-type: application/json
