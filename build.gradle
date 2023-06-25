@@ -117,8 +117,6 @@ allprojects {
 
         implementation 'com.google.collections:google-collections:1.0'
 
-        // log
-        implementation 'org.springframework.boot:spring-boot-starter-log4j2'
     }
 }
 
