@@ -1,7 +1,7 @@
-# Springboot 3 Backend API
+# [Backend] Hotel Reservation Monolithic API
 
 ## Tech Spec
-- Springboot 3.0.4
+- Springboot 3.1.0
   - Java JDK 17
 - Spring Data JPA
 - QueryDSL 5.0.0 (Spring 6, Springboot 3 이상 대응)
@@ -13,7 +13,7 @@
   - asciidoctor
 - Prometheus
 - Spring Validation
-- Spring Batch (구현 예정)
+- Spring Batch
 
 # Swagger
 http://localhost:8888/swagger-ui/index.html
