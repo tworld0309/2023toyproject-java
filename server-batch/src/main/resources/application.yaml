@@ -33,3 +33,17 @@ jasypt:
   encryptor:
     bean: jasyptStringEncryptor
     password: A421080gsm
+
+logging:
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+  file:
+    name: /app/logs/hotel-batch-log.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: "/app/logs/hotel-batch-log.%d{yyyy-MM-dd}.%i"
+      max-history: 30
+  level:
+    org: INFO
+    com: INFO
+    cf: DEBUG

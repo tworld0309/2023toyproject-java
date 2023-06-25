@@ -20,15 +20,15 @@
      -->
 
     <!-- 변수 지정 -->
-    <property name="PATH" value="./log"/>
-    <property name="PATH_NAME" value="${PATH}/backend.log"/>
+    <property name="PATH" value="../logs"/>
+    <property name="PATH_NAME" value="${PATH}/hotel-batch-log.log"/>
 
     <!-- FILE Appender -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${PATH_NAME}</file>
         <!-- 일자별로 로그파일 적용하기 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${PATH}/backend.%d{yyyyMMdd}.log</fileNamePattern>
+            <fileNamePattern>${PATH}/hotel-batch-log.%d{yyyyMMdd}.log</fileNamePattern>
             <maxHistory>60</maxHistory>
         </rollingPolicy>
         <encoder>

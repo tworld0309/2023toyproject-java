@@ -86,16 +86,16 @@ springdoc:
   override-with-generic-response: false # Default 응답 메시지(@ControllerAdvice) 제외
   default-produces-media-type: application/json
 
-#logging:
-#  pattern:
-#    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
-#  file:
-#    name: /app/logs/applog/hotel-backend-log.log
-#  logback:
-#    rollingpolicy:
-#      file-name-pattern: "/app/logs/applog/hotel-backend-log.%d{yyyy-MM-dd}.%i"
-#      max-history: 30
-#  level:
-#    org: INFO
-#    com: INFO
-#    cf: DEBUG
+logging:
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+  file:
+    name: /app/logs/hotel-backend-log.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: "/app/logs/hotel-backend-log.%d{yyyy-MM-dd}.%i"
+      max-history: 30
+  level:
+    org: INFO
+    com: INFO
+    cf: DEBUG
