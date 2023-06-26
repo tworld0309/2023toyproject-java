@@ -48,6 +48,12 @@ public class TbUserEntity {
     @Column(name = "cust_grade_cd")
     private String custGradeCd;
 
+    @Column(name = "cust_grade_modi_dt")
+    private LocalDate custGradeModiDt;
+
+    @Column(name = "cust_grade_modi_admin")
+    private String custGradeModiAdmin;
+
     @Column(name = "cust_type_cd")
     private String custTypeCd;
 
