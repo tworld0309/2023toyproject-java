@@ -3,6 +3,8 @@ package com.hotel.serverapi.data.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
@@ -64,12 +66,14 @@ public class TbRoomEntity {
     private String regId;
 
     @Column(name = "reg_dt")
+    @CreatedDate
     private LocalDate regDt;
 
     @Column(name = "mod_id")
     private String modId;
 
     @Column(name = "mod_dt")
+    @LastModifiedDate
     private LocalDate modDt;
 
 }

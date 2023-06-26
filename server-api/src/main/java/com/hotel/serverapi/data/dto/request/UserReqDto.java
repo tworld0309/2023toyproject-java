@@ -6,16 +6,16 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class UserRequestDto {
+public class UserReqDto {
     private String custId;
 
     @Builder
-    public UserRequestDto(String custId) {
+    public UserReqDto(String custId) {
         this.custId = custId;
     }
 
-    static public UserRequestDto of(String custId) {
-        return UserRequestDto.builder()
+    static public UserReqDto of(String custId) {
+        return UserReqDto.builder()
                 .custId(custId)
                 .build();
     }
