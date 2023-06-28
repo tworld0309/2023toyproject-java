@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -101,
-    "scrollLeft": -384,
-    "zoomLevel": 0.9,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -206,6 +206,52 @@
               "widthDefault": 60
             },
             "id": "d4b05ecb-8bc7-4303-a5ea-44e2b4441a89"
+          },
+          {
+            "name": "cust_grade_modi_dt",
+            "comment": "최근고객등급변경일",
+            "dataType": "date",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 107.49484252929688,
+              "widthComment": 103.2049560546875,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6e5bc427-842d-4021-8f9b-50684fb53f12"
+          },
+          {
+            "name": "cust_grade_modi_admin",
+            "comment": "최근고객등급변경자",
+            "dataType": "varchar(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 129.43881225585938,
+              "widthComment": 103.2049560546875,
+              "widthDataType": 65.58285522460938,
+              "widthDefault": 60
+            },
+            "id": "486d453e-e538-4f62-8b56-e8640f702d21"
           },
           {
             "name": "cust_type_cd",
@@ -442,7 +488,7 @@
           "active": false,
           "left": 13,
           "top": 4.75,
-          "zIndex": 6,
+          "zIndex": 66,
           "widthName": 60,
           "widthComment": 60
         },
@@ -711,7 +757,7 @@
           "active": false,
           "left": 662.5,
           "top": 673,
-          "zIndex": 52,
+          "zIndex": 28,
           "widthName": 60,
           "widthComment": 60
         },
@@ -888,7 +934,7 @@
           "active": false,
           "left": 1597,
           "top": 20,
-          "zIndex": 15,
+          "zIndex": 5,
           "widthName": 75.0859375,
           "widthComment": 60
         },
@@ -1088,7 +1134,7 @@
           "active": false,
           "left": 1594,
           "top": 274,
-          "zIndex": 49,
+          "zIndex": 7,
           "widthName": 94.97592163085938,
           "widthComment": 69.469970703125
         },
@@ -1472,7 +1518,7 @@
           "active": false,
           "left": 12,
           "top": 541.7775,
-          "zIndex": 4,
+          "zIndex": 2,
           "widthName": 99.05789184570312,
           "widthComment": 60
         },
@@ -1879,7 +1925,7 @@
           "active": false,
           "left": 1163.5,
           "top": 32,
-          "zIndex": 30,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2240,7 +2286,7 @@
           "active": false,
           "left": 1173.75,
           "top": 543.75,
-          "zIndex": 55,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2893,7 +2939,7 @@
           "active": false,
           "left": 595.75,
           "top": 6,
-          "zIndex": 10,
+          "zIndex": 4,
           "widthName": 62.280914306640625,
           "widthComment": 60
         },
@@ -2917,8 +2963,8 @@
           "columnIds": [
             "cff9566b-7b35-4613-a8b8-1baba682fee5"
           ],
-          "x": 255.64881896972656,
-          "y": 422.25,
+          "x": 256.9943313598633,
+          "y": 463.25,
           "direction": "bottom"
         },
         "end": {

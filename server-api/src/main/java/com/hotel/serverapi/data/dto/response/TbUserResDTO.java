@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class TbUserResponseDTO {
+public class TbUserResDTO {
     private String custId;
     private String custPassword;
     private String custEmail;
