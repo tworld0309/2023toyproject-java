@@ -1,6 +1,7 @@
 package com.hotel.serverapi.service;
 
 
+import com.hotel.serverapi.data.dto.common.CommonResDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
@@ -22,8 +23,8 @@ public class UserService {
      * Method :  getUserList
      * Description : 고객 목록 조회
      **/
-    public List<TbUserResDTO> getUserList() {
-        return UserMapper.INSTANCE.toDtoList(userRepository.findAll());
+    public CommonResDTO getUserList() {
+        return CommonResDTO.of(UserMapper.INSTANCE.toDtoList(userRepository.findAll()));
     }
 
 

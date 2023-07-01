@@ -32,6 +32,7 @@ public class TbCmCodeEntity {
     @Column(name = "description")
     private String description;
 
+
     @Column(name = "reg_id")
     @CreatedBy
     private String regId;

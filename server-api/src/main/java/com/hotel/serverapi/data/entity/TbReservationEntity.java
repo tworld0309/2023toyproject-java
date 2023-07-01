@@ -26,9 +26,14 @@ public class TbReservationEntity {
     @Column(name = "reservation_id")
     private String reservationId;
 
-    @ManyToOne
-    @JoinColumn(name = "cust_id")
-    private TbUserEntity custId;
+    @Column(name = "cust_id")
+    private String custId;
+
+    @Column(name = "hotel_cd")
+    private String hotelCd;
+
+    @Column(name = "room_grade_cd")
+    private String roomGradeCd;
 
     @Column(name = "payment_dt")
     private LocalDate paymentDt;
@@ -42,12 +47,6 @@ public class TbReservationEntity {
     @Column(name = "invoice")
     private String invoice;
 
-    @Column(name = "early_checkin_yn")
-    private String earlyCheckinYn;
-
-    @Column(name = "late_checkout_yn")
-    private String lateCheckoutYn;
-
     @Column(name = "special_request")
     private String specialRequest;
 
@@ -56,10 +55,6 @@ public class TbReservationEntity {
 
     @Column(name = "status_cd")
     private String statusCd;
-
-    @Column(name = "user_cancle_yn")
-    private String userCancleYn;
-
 
     @Column(name = "reg_id")
     @CreatedBy

@@ -11,7 +11,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
 
-@IdClass(TbAdminId.class)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -21,10 +20,9 @@ import java.time.LocalDate;
 @Getter
 @Entity
 @Table(name = "TB_ADMIN", schema = "hotel")
-public class TbAdminEntity {
-    @Id
-    @Column(name = "admin_id")
-    private String adminId;
+public class TbAdminEntity {    @Id
+@Column(name = "admin_id")
+private String adminId;
 
     @Id
     @Column(name = "admin_hotel_id")

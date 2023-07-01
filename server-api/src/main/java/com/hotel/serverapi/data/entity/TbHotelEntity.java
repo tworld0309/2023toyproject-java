@@ -10,8 +10,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -28,28 +26,11 @@ public class TbHotelEntity {
     @Column(name = "hotel_cd")
     private String hotelCd;
 
-    @OneToMany(fetch=FetchType.LAZY)
-    @ToString.Exclude
-    @Builder.Default
-    private List<TbRoomEntity> child = new ArrayList<>();
-
     @Column(name = "hotel_nm")
     private String hotelNm;
 
     @Column(name = "hotel_grade_cd")
     private String hotelGradeCd;
-
-    @Column(name = "hotel_establish_dt")
-    private LocalDate hotelEstablishDt;
-
-    @Column(name = "hotel_nation_cd")
-    private String hotelNationCd;
-
-    @Column(name = "hotel_city_cd")
-    private String hotelCityCd;
-
-    @Column(name = "tour_info")
-    private String tourInfo;
 
     @Column(name = "hotel_address")
     private String hotelAddress;

@@ -9,10 +9,18 @@ import java.time.LocalDate;
 @Setter
 public class TbUserGradeResDTO {
     private String custId;
+    private String custPassword;
+    private String custEmail;
     private String custNm;
+    private LocalDate custBirthDt;
+    private String custPhone;
     private String custGradeCd;
+    private LocalDate custGradeModiDt;
+    private String custGradeModiAdmin;
     private String custTypeCd;
-    // 최근 등급 변경일 추가 필요 (230626)
+    private String custAddress;
+    private String custAddress2;
+    private String custZipcode;
     private String regId;
     private LocalDate regDt;
     private String modId;

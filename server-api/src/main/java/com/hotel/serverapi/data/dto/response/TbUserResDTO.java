@@ -15,9 +15,9 @@ public class TbUserResDTO {
     private LocalDate custBirthDt;
     private String custPhone;
     private String custGradeCd;
+    private LocalDate custGradeModiDt;
+    private String custGradeModiAdmin;
     private String custTypeCd;
-    private String custPassport;
-    private LocalDate custPasswordValidDt;
     private String custAddress;
     private String custAddress2;
     private String custZipcode;
