@@ -1,33 +1,36 @@
-package com.hotel.serverapi.dto;
+package com.hotel.serverapi.data.dto.common;
 
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
+import java.util.Map;
+
 @Getter
 @Builder
-public class CommonResDTO<T> {
+public class CommonResDTO {
 
     private String code;
     private String message;
-    private T data;
+    private List<?> list;
 
-    public static <T> CommonResDTO of(T data) {
+    public static CommonResDTO of(List<?> data) {
         return CommonResDTO.builder()
                 .code(ResCode.SUCCESS.getCode())
                 .message(ResCode.SUCCESS.getMessage())
-                .data(data)
+                .list(data)
                 .build();
     }
 
-    public static <T> CommonResDTO of(T data, ResCode resCode) {
+    public static CommonResDTO of(List<?> data, ResCode resCode) {
         return CommonResDTO.builder()
                 .code(resCode.getCode())
                 .message(resCode.getMessage())
-                .data(data)
+                .list(data)
                 .build();
     }
 
-    public static <T> CommonResDTO of(ResCode resCode) {
+    public static CommonResDTO of(ResCode resCode) {
         return CommonResDTO.builder()
                 .code(resCode.getCode())
                 .message(resCode.getMessage())

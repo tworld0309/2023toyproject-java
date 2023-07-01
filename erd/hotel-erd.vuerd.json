@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 0,
-    "zoomLevel": 1,
+    "scrollTop": -31,
+    "scrollLeft": -286,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -17,7 +17,7 @@
       "columnNotNull": true,
       "relationship": true
     },
-    "database": "MariaDB",
+    "database": "MySQL",
     "databaseName": "hotel",
     "canvasType": "ERD",
     "language": "GraphQL",
@@ -187,7 +187,7 @@
           {
             "name": "cust_grade_cd",
             "comment": "고객등급코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -202,7 +202,7 @@
               "pfk": false,
               "widthName": 77.0098876953125,
               "widthComment": 69.469970703125,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "d4b05ecb-8bc7-4303-a5ea-44e2b4441a89"
@@ -256,7 +256,7 @@
           {
             "name": "cust_type_cd",
             "comment": "고객구분(내국인,외국인)",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -271,56 +271,10 @@
               "pfk": false,
               "widthName": 70.75691223144531,
               "widthComment": 120,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "0177365f-1ed9-433c-9872-c61ea8376c92"
-          },
-          {
-            "name": "cust_passport",
-            "comment": "고객여권번호",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 76.25587463378906,
-              "widthComment": 69.469970703125,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "405f6e49-0b5a-48ff-bdfe-5f1f648a30ee"
-          },
-          {
-            "name": "cust_password_valid_dt",
-            "comment": "고객여권만료일자",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 126.74778747558594,
-              "widthComment": 91.9599609375,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "370058fd-0fdf-47df-b3fe-e3f6fa728ba5"
           },
           {
             "name": "cust_address",
@@ -488,7 +442,7 @@
           "active": false,
           "left": 13,
           "top": 4.75,
-          "zIndex": 66,
+          "zIndex": 7,
           "widthName": 60,
           "widthComment": 60
         },
@@ -594,7 +548,7 @@
           {
             "name": "admin_role_cd",
             "comment": "역할코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -609,7 +563,7 @@
               "pfk": false,
               "widthName": 78.14088439941406,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "f4f627e7-d45d-4d12-ba72-f1d04781cacb"
@@ -755,9 +709,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 662.5,
-          "top": 673,
-          "zIndex": 28,
+          "left": 567.321,
+          "top": 669.3336,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60
         },
@@ -771,7 +725,7 @@
           {
             "name": "code",
             "comment": "공통코드",
-            "dataType": "char(20)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -786,7 +740,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "af8d42dd-aa38-4a7c-a156-88af790b7c38"
@@ -932,9 +886,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1597,
-          "top": 20,
-          "zIndex": 5,
+          "left": 1617,
+          "top": 33,
+          "zIndex": 8,
           "widthName": 75.0859375,
           "widthComment": 60
         },
@@ -948,7 +902,7 @@
           {
             "name": "code",
             "comment": "공통코드",
-            "dataType": "char(20)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -963,7 +917,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "16ee6e99-86d6-40f5-9801-c4ae62fbf44e"
@@ -1132,9 +1086,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1594,
-          "top": 274,
-          "zIndex": 7,
+          "left": 1608,
+          "top": 351,
+          "zIndex": 1,
           "widthName": 94.97592163085938,
           "widthComment": 69.469970703125
         },
@@ -1192,6 +1146,52 @@
             "id": "8b2c2c50-e161-4d95-b5c6-fa4f80ed2288"
           },
           {
+            "name": "hotel_cd",
+            "comment": "호텔 코드",
+            "dataType": "varchar(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 65.58285522460938,
+              "widthDefault": 60
+            },
+            "id": "f3acdafa-5ee1-41cb-ae29-70fd24f360e1"
+          },
+          {
+            "name": "room_grade_cd",
+            "comment": "등급 코드",
+            "dataType": "varchar(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.1458740234375,
+              "widthComment": 60,
+              "widthDataType": 63.35986328125,
+              "widthDefault": 60
+            },
+            "id": "269a9d95-dbee-4708-a45d-efe5ca3c18e2"
+          },
+          {
             "name": "payment_dt",
             "comment": "결제일시",
             "dataType": "date",
@@ -1217,7 +1217,7 @@
           {
             "name": "payment_cd",
             "comment": "결제수단 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1232,7 +1232,7 @@
               "pfk": false,
               "widthName": 67.24691772460938,
               "widthComment": 72.88896179199219,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "24ae8d2b-ece5-485e-9b0e-721e5fbef778"
@@ -1284,52 +1284,6 @@
             "id": "065efef5-55a2-4a33-aba6-183b5fd4a572"
           },
           {
-            "name": "early_checkin_yn",
-            "comment": "얼리체크인여부",
-            "dataType": "char(1)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 91.62185668945312,
-              "widthComment": 80.7149658203125,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "172ffb0b-0104-4bee-804b-e57f55d9b4a3"
-          },
-          {
-            "name": "late_checkout_yn",
-            "comment": "늦은체크아웃여부",
-            "dataType": "char(1)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 93.87086486816406,
-              "widthComment": 91.9599609375,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "57376754-314c-4a76-b2c3-3e63ad3c4438"
-          },
-          {
             "name": "special_request",
             "comment": "추가요구사항",
             "dataType": "varchar(200)",
@@ -1378,7 +1332,7 @@
           {
             "name": "status_cd",
             "comment": "예약상태(임시,저장,대기,취소)",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1393,33 +1347,10 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 120,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "5c93ac23-81f5-400f-9eb9-41620b9d91f6"
-          },
-          {
-            "name": "user_cancle_yn",
-            "comment": "사용자_취소_여부",
-            "dataType": "char(1)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 81.50788879394531,
-              "widthComment": 89.45095825195312,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "daf1e678-abf1-446c-a660-f6959b3d7f12"
           },
           {
             "name": "reg_id",
@@ -1516,9 +1447,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 12,
-          "top": 541.7775,
-          "zIndex": 2,
+          "left": 31,
+          "top": 547.6664,
+          "zIndex": 15,
           "widthName": 99.05789184570312,
           "widthComment": 60
         },
@@ -1550,7 +1481,7 @@
               "widthDataType": 65.58285522460938,
               "widthDefault": 60
             },
-            "id": "4f29d4a1-7516-4e2c-9821-ad8c80e3084a"
+            "id": "1205e176-9908-4cf8-bbff-d445b965d2ce"
           },
           {
             "name": "room_cd",
@@ -1599,6 +1530,29 @@
             "id": "ebe9d32e-73b1-4737-a9d0-72b7505e7b32"
           },
           {
+            "name": "room_status_cd",
+            "comment": "룸 상태코드",
+            "dataType": "varchar(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 85.40786743164062,
+              "widthComment": 61.64396667480469,
+              "widthDataType": 63.35986328125,
+              "widthDefault": 60
+            },
+            "id": "291e74af-0820-486e-afde-6428acf22733"
+          },
+          {
             "name": "room_floor",
             "comment": "층",
             "dataType": "int",
@@ -1624,7 +1578,7 @@
           {
             "name": "room_grade_cd",
             "comment": "등급 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1639,194 +1593,10 @@
               "pfk": false,
               "widthName": 83.1458740234375,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "4716e5f1-0476-4892-857b-8aefcad4ba85"
-          },
-          {
-            "name": "room_view_cd",
-            "comment": "View 코드",
-            "dataType": "char(2)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 77.80290222167969,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "728ab820-2f4b-4243-b32f-6dc310986279"
-          },
-          {
-            "name": "room_max_accomdate",
-            "comment": "최대 수용 인원",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 121.82083129882812,
-              "widthComment": 76.30795288085938,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "bc083f92-e026-4120-b539-a0fbcb52e181"
-          },
-          {
-            "name": "room_basic_accomdate",
-            "comment": "기본 수용 인원",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 126.46180725097656,
-              "widthComment": 76.30795288085938,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "11cdd2f5-c5e7-4352-a03d-4357119b5a90"
-          },
-          {
-            "name": "room_price",
-            "comment": "룸 기본 금액",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 62.072906494140625,
-              "widthComment": 65.06295776367188,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "5f0d9334-ae0d-478c-9600-e003fa81de16"
-          },
-          {
-            "name": "room_extra_price",
-            "comment": "1인 추가 요금",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 94.05284118652344,
-              "widthComment": 69.70394897460938,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "91eb0c05-9a01-45a0-a6b3-fdd413eb0b6c"
-          },
-          {
-            "name": "room_size",
-            "comment": "사이즈 (m2)",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 64.76393127441406,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "2f79a072-53a1-4abe-913f-e3a1918fc4da"
-          },
-          {
-            "name": "room_smoke_yn",
-            "comment": "금연실 여부",
-            "dataType": "char(2)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 88.2808837890625,
-              "widthComment": 61.64396667480469,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "dc85198e-a5cc-4151-adf0-05e5fb6789a1"
-          },
-          {
-            "name": "room_bath_yn",
-            "comment": "욕조 포함 여부",
-            "dataType": "char(2)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 77.52987670898438,
-              "widthComment": 76.30795288085938,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "ba1ac66c-8955-40cb-bf9c-d3e19905cf6f"
           },
           {
             "name": "reg_id",
@@ -1923,9 +1693,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1163.5,
-          "top": 32,
-          "zIndex": 6,
+          "left": 1113.5,
+          "top": 449.8889,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1985,7 +1755,7 @@
           {
             "name": "hotel_grade_cd",
             "comment": "호텔 등급 코드",
-            "dataType": "char(2)",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2000,102 +1770,10 @@
               "pfk": false,
               "widthName": 82.23587036132812,
               "widthComment": 76.30795288085938,
-              "widthDataType": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "a16e3b80-1fb3-44d1-878a-57e27da90b00"
-          },
-          {
-            "name": "hotel_establish_dt",
-            "comment": "호텔 설립 일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 98.21282958984375,
-              "widthComment": 76.30795288085938,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "ca2bc8bf-a2e1-4df0-b9de-c054b505c1e0"
-          },
-          {
-            "name": "hotel_nation_cd",
-            "comment": "국가코드",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 86.09684753417969,
-              "widthComment": 60,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "a1549a52-1013-4906-ab66-4a1c08ebecb4"
-          },
-          {
-            "name": "hotel_city_cd",
-            "comment": "도시코드",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 71.19888305664062,
-              "widthComment": 60,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "0f92dfd1-4f05-447b-aa9c-05f8a24ce9fd"
-          },
-          {
-            "name": "tour_info",
-            "comment": "관광지 정보",
-            "dataType": "varchar(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 61.64396667480469,
-              "widthDataType": 71.54985046386719,
-              "widthDefault": 60
-            },
-            "id": "3e815eaf-a0d1-4251-b0fd-ae97990fc11a"
           },
           {
             "name": "hotel_address",
@@ -2284,168 +1962,14 @@
         ],
         "ui": {
           "active": false,
-          "left": 1173.75,
-          "top": 543.75,
+          "left": 1098.1942,
+          "top": 4.4444,
           "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
         "visible": true,
         "id": "cc8eea4a-0220-4a4f-828b-5ee3eebf3318"
-      },
-      {
-        "name": "TB_PRICE",
-        "comment": "비용 정보",
-        "columns": [
-          {
-            "name": "item_cd",
-            "comment": "상품 코드",
-            "dataType": "char(2)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "447fb0ed-1aaf-4f87-8581-1bbc0d67e6d5"
-          },
-          {
-            "name": "price",
-            "comment": "비용",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b4546fc0-6d3f-4696-b8c2-f3a57b7718ff"
-          },
-          {
-            "name": "reg_id",
-            "comment": "등록자ID",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "05ad0357-364a-4f7b-820e-98cbad362069"
-          },
-          {
-            "name": "reg_dt",
-            "comment": "등록일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "8462670b-21a5-4e0c-91f0-28f2c817a701"
-          },
-          {
-            "name": "mod_id",
-            "comment": "수정자ID",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "3dfd72c1-70f8-4ddf-8c48-4bb8e376e9fd"
-          },
-          {
-            "name": "mod_dt",
-            "comment": "수정일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "ec138d90-d8d1-4ee1-9e9e-afa7c7d38e6c"
-          }
-        ],
-        "ui": {
-          "active": false,
-          "left": 1627,
-          "top": 566,
-          "zIndex": 1,
-          "widthName": 60,
-          "widthComment": 60
-        },
-        "visible": true,
-        "id": "2f95d807-6e1f-4dc5-b642-75e7657a3a4f"
       },
       {
         "name": "TB_ASSIGN",
@@ -2544,147 +2068,9 @@
             "id": "ba23504f-4640-4870-a847-6ef93995d10b"
           },
           {
-            "name": "payment_dt",
-            "comment": "결제일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 65.94691467285156,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "2a9d5253-b0b9-4a63-b49d-124777a44035"
-          },
-          {
-            "name": "payment_cd",
-            "comment": "결제수단 코드",
-            "dataType": "char(2)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 67.24691772460938,
-              "widthComment": 72.88896179199219,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "12b86673-8579-4ee6-9ed0-2a79c4aad23e"
-          },
-          {
-            "name": "payment_price",
-            "comment": "결제 금액(보증금)",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 81.19589233398438,
-              "widthComment": 92.37593078613281,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "8c2a4777-f525-461a-86ff-a4f1b132e34d"
-          },
-          {
-            "name": "invoice",
-            "comment": "승인번호",
-            "dataType": "varchar(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 65.58285522460938,
-              "widthDefault": 60
-            },
-            "id": "2b171763-ba92-44ba-acd1-d8f79ba860d4"
-          },
-          {
-            "name": "checkout_usage_price",
-            "comment": "체크아웃 후 발생 비용",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 118.81784057617188,
-              "widthComment": 113.46192932128906,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "9560efca-86d9-4f68-874e-80b43de4e85f"
-          },
-          {
-            "name": "final_return_price",
-            "comment": "최종반환금액",
-            "dataType": "int",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 94.79383850097656,
-              "widthComment": 69.469970703125,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "24783f56-303d-4712-8aef-ef84dca0e076"
-          },
-          {
             "name": "status_cd",
-            "comment": "상태코드(AA-보증금 승인 완료, AB-체크아웃 완료, AC-발생비용 저장 완료, BB-고객반환 완료)",
-            "dataType": "char(2)",
+            "comment": "상태코드",
+            "dataType": "varchar(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2698,8 +2084,8 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 120,
-              "widthDataType": 60,
+              "widthComment": 60,
+              "widthDataType": 63.35986328125,
               "widthDefault": 60
             },
             "id": "cf839187-ba09-496c-a7bb-b1d3dfafcbd2"
@@ -2726,29 +2112,6 @@
               "widthDefault": 60
             },
             "id": "6f043baa-5a20-4c1c-adea-d556bfc192ae"
-          },
-          {
-            "name": "real_checkin_dt",
-            "comment": "실_체크인_일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 83.75686645507812,
-              "widthComment": 78.20596313476562,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "2ad648ab-a414-41e1-8af4-62cf1d882217"
           },
           {
             "name": "real_checkin_admin_id",
@@ -2795,29 +2158,6 @@
               "widthDefault": 60
             },
             "id": "3234455c-77e0-458d-b2eb-b3cc98998624"
-          },
-          {
-            "name": "real_checkout_dt",
-            "comment": "실_체크아웃_일시",
-            "dataType": "date",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 92.21986389160156,
-              "widthComment": 89.45095825195312,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "8deccbd6-a4d2-43bf-9d53-5235411125be"
           },
           {
             "name": "real_checkout_admin_id",
@@ -2937,14 +2277,237 @@
         ],
         "ui": {
           "active": false,
-          "left": 595.75,
-          "top": 6,
-          "zIndex": 4,
+          "left": 553.5278,
+          "top": 310.9999,
+          "zIndex": 6,
           "widthName": 62.280914306640625,
           "widthComment": 60
         },
         "visible": true,
         "id": "6ed2c9e9-5283-4887-9d41-ea3e655cf888"
+      },
+      {
+        "name": "TB_GRADE_ROOM",
+        "comment": "방 등급 정보",
+        "columns": [
+          {
+            "name": "reservation_date",
+            "comment": "일자",
+            "dataType": "varchar(8)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 91.90785217285156,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "88403edc-9064-428f-85b0-ab9997eb7d92"
+          },
+          {
+            "name": "hotel_cd",
+            "comment": "호텔 코드",
+            "dataType": "varchar(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": true,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 65.58285522460938,
+              "widthDefault": 60
+            },
+            "id": "48bc26a2-45b3-4b4c-96e5-d6d39dfad60a"
+          },
+          {
+            "name": "room_grade_cd",
+            "comment": "등급 코드",
+            "dataType": "varchar(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.1458740234375,
+              "widthComment": 60,
+              "widthDataType": 63.35986328125,
+              "widthDefault": 60
+            },
+            "id": "c24ca10c-859e-40fe-8449-06a3fc3563d6"
+          },
+          {
+            "name": "total_cnt",
+            "comment": "총개수",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "65d4370b-53d9-47ac-b586-270047a71df5"
+          },
+          {
+            "name": "reserved_cnt",
+            "comment": "예약개수",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.2379150390625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "79c60039-5285-4329-b0ce-41fe625a89b0"
+          },
+          {
+            "name": "reg_id",
+            "comment": "등록자ID",
+            "dataType": "varchar(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 65.58285522460938,
+              "widthDefault": 60
+            },
+            "id": "dd97cd83-ba6d-4c2c-99e3-f57b95fae77a"
+          },
+          {
+            "name": "reg_dt",
+            "comment": "등록일시",
+            "dataType": "date",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "cdb4dd56-76b5-4bae-914e-588c1c3c516d"
+          },
+          {
+            "name": "mod_id",
+            "comment": "수정자ID",
+            "dataType": "varchar(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 65.58285522460938,
+              "widthDefault": 60
+            },
+            "id": "143b006f-7938-4858-b3d2-ca20980716b0"
+          },
+          {
+            "name": "mod_dt",
+            "comment": "수정일시",
+            "dataType": "date",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ae9722de-7a3b-4e02-9374-3ce0f2bf6199"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 553.3336,
+          "top": 25.8889,
+          "zIndex": 16,
+          "widthName": 100.27992248535156,
+          "widthComment": 65.06295776367188
+        },
+        "visible": true,
+        "id": "4452f018-c695-430e-a8d7-8aa5f562d597"
       }
     ],
     "indexes": []
@@ -2964,7 +2527,7 @@
             "cff9566b-7b35-4613-a8b8-1baba682fee5"
           ],
           "x": 256.9943313598633,
-          "y": 463.25,
+          "y": 422.25,
           "direction": "bottom"
         },
         "end": {
@@ -2972,39 +2535,13 @@
           "columnIds": [
             "8b2c2c50-e161-4d95-b5c6-fa4f80ed2288"
           ],
-          "x": 239.3218536376953,
-          "y": 541.7775,
+          "x": 253.69386291503906,
+          "y": 547.6664,
           "direction": "top"
         },
         "constraintName": "fk_tb_user_to_tb_reservation",
         "visible": true,
         "id": "f16b016b-6d9c-4e27-8f21-88c2354c10ed"
-      },
-      {
-        "identification": true,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "cc8eea4a-0220-4a4f-828b-5ee3eebf3318",
-          "columnIds": [
-            "3bfa0789-a24f-4254-b376-4576c9c7e218"
-          ],
-          "x": 1380.2853164672852,
-          "y": 543.75,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "546e14d3-9ba5-4b31-b50c-380515d351f1",
-          "columnIds": [
-            "4f29d4a1-7516-4e2c-9821-ad8c80e3084a"
-          ],
-          "x": 1381.2283096313477,
-          "y": 449.5,
-          "direction": "bottom"
-        },
-        "constraintName": "fk_tb_hotel_to_tb_room",
-        "visible": true,
-        "id": "d7d870a3-6f86-4247-96b0-1af981b2b741"
       },
       {
         "identification": false,
@@ -3015,8 +2552,8 @@
           "columnIds": [
             "019f2a4d-775a-47cd-8b1b-f4f878e9c7b2"
           ],
-          "x": 466.6437072753906,
-          "y": 740.2775,
+          "x": 476.3877258300781,
+          "y": 735.9164,
           "direction": "right"
         },
         "end": {
@@ -3024,9 +2561,9 @@
           "columnIds": [
             "900b8a21-45b9-4fce-abbc-69d5f5c8701e"
           ],
-          "x": 836.3253326416016,
-          "y": 505.5,
-          "direction": "bottom"
+          "x": 553.5278,
+          "y": 478.7499,
+          "direction": "left"
         },
         "constraintName": "fk_tb_reservation_to_tb_assign",
         "visible": true,
@@ -3039,21 +2576,19 @@
         "start": {
           "tableId": "546e14d3-9ba5-4b31-b50c-380515d351f1",
           "columnIds": [
-            "4f29d4a1-7516-4e2c-9821-ad8c80e3084a",
             "36f16787-e6b1-4cc6-ae0a-c085a6474a8c"
           ],
-          "x": 1163.5,
-          "y": 240.75,
+          "x": 1113.5,
+          "y": 586.8888999999999,
           "direction": "left"
         },
         "end": {
           "tableId": "6ed2c9e9-5283-4887-9d41-ea3e655cf888",
           "columnIds": [
-            "18b69acc-60af-46f6-970b-0a0783bdbae7",
             "ba23504f-4640-4870-a847-6ef93995d10b"
           ],
-          "x": 1076.9006652832031,
-          "y": 255.75,
+          "x": 1015.3744186523437,
+          "y": 478.7499,
           "direction": "right"
         },
         "constraintName": "fk_tb_room_to_tb_assign",
@@ -3069,8 +2604,8 @@
           "columnIds": [
             "af8d42dd-aa38-4a7c-a156-88af790b7c38"
           ],
-          "x": 1777.662368774414,
-          "y": 232.5,
+          "x": 1797.662368774414,
+          "y": 245.5,
           "direction": "bottom"
         },
         "end": {
@@ -3078,13 +2613,65 @@
           "columnIds": [
             "16ee6e99-86d6-40f5-9801-c4ae62fbf44e"
           ],
-          "x": 1783.6324081420898,
-          "y": 274,
+          "x": 1797.6324081420898,
+          "y": 351,
           "direction": "top"
         },
         "constraintName": "fk_tb_cm_code_to_tb_cm_dt_code",
         "visible": true,
         "id": "0beb2ed1-3a96-4fa3-a6a2-5d62b77a099d"
+      },
+      {
+        "identification": true,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "cc8eea4a-0220-4a4f-828b-5ee3eebf3318",
+          "columnIds": [
+            "3bfa0789-a24f-4254-b376-4576c9c7e218"
+          ],
+          "x": 1297.274033984375,
+          "y": 298.9444,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "546e14d3-9ba5-4b31-b50c-380515d351f1",
+          "columnIds": [
+            "1205e176-9908-4cf8-bbff-d445b965d2ce"
+          ],
+          "x": 1303.3693466186523,
+          "y": 449.8889,
+          "direction": "top"
+        },
+        "constraintName": "fk_tb_hotel_to_tb_room",
+        "visible": true,
+        "id": "3b36344b-2b71-4fe0-97a4-d0331495162e"
+      },
+      {
+        "identification": true,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "cc8eea4a-0220-4a4f-828b-5ee3eebf3318",
+          "columnIds": [
+            "3bfa0789-a24f-4254-b376-4576c9c7e218"
+          ],
+          "x": 1098.1942,
+          "y": 151.6944,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "4452f018-c695-430e-a8d7-8aa5f562d597",
+          "columnIds": [
+            "48bc26a2-45b3-4b4c-96e5-d6d39dfad60a"
+          ],
+          "x": 937.824307397461,
+          "y": 152.6389,
+          "direction": "right"
+        },
+        "constraintName": "fk_tb_hotel_to_tb_grade_room",
+        "visible": true,
+        "id": "fac223ab-d31f-4839-a452-00aec84770bb"
       }
     ]
   }

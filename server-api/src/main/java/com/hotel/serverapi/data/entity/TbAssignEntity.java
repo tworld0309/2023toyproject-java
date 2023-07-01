@@ -25,34 +25,14 @@ public class TbAssignEntity {
     @Column(name = "assign_id")
     private String assignId;
 
-    @ManyToOne
-    @JoinColumn(name = "reservation_id")
-    private TbReservationEntity reservationId;
+    @Column(name = "reservation_id")
+    private String reservationId;
 
-    @ManyToOne
-    @JoinColumns({
-            @JoinColumn(name="room_cd"),
-            @JoinColumn(name="hotel_cd")
-    })
-    private TbRoomEntity tbRoomEntity;
+    @Column(name = "hotel_cd")
+    private String hotelCd;
 
-    @Column(name = "payment_dt")
-    private LocalDate paymentDt;
-
-    @Column(name = "payment_cd")
-    private String paymentCd;
-
-    @Column(name = "payment_price")
-    private Integer paymentPrice;
-
-    @Column(name = "invoice")
-    private String invoice;
-
-    @Column(name = "checkout_usage_price")
-    private Integer checkoutUsagePrice;
-
-    @Column(name = "final_return_price")
-    private Integer finalReturnPrice;
+    @Column(name = "room_cd")
+    private String roomCd;
 
     @Column(name = "status_cd")
     private String statusCd;
@@ -60,17 +40,11 @@ public class TbAssignEntity {
     @Column(name = "checkin_dt")
     private LocalDate checkinDt;
 
-    @Column(name = "real_checkin_dt")
-    private LocalDate realCheckinDt;
-
     @Column(name = "real_checkin_admin_id")
     private String realCheckinAdminId;
 
     @Column(name = "checkout_dt")
     private LocalDate checkoutDt;
-
-    @Column(name = "real_checkout_dt")
-    private LocalDate realCheckoutDt;
 
     @Column(name = "real_checkout_admin_id")
     private String realCheckoutAdminId;

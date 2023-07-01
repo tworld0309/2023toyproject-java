@@ -19,13 +19,11 @@ import java.time.LocalDate;
 @ToString
 @Getter
 @Entity
-@IdClass(TbRoomId.class)
 @Table(name = "TB_ROOM", schema = "hotel")
 public class TbRoomEntity {
     @Id
-    @ManyToOne
-    @JoinColumn(name = "hotel_cd")
-    private TbHotelEntity hotelCd;
+    @Column(name = "hotel_cd")
+    private String hotelCd;
 
     @Id
     @Column(name = "room_cd")
@@ -34,35 +32,14 @@ public class TbRoomEntity {
     @Column(name = "room_nm")
     private String roomNm;
 
+    @Column(name = "room_status_cd")
+    private String roomStatusCd;
+
     @Column(name = "room_floor")
     private Integer roomFloor;
 
     @Column(name = "room_grade_cd")
     private String roomGradeCd;
-
-    @Column(name = "room_view_cd")
-    private String roomViewCd;
-
-    @Column(name = "room_max_accomdate")
-    private Integer roomMaxAccomdate;
-
-    @Column(name = "room_basic_accomdate")
-    private Integer roomBasicAccomdate;
-
-    @Column(name = "room_price")
-    private Integer roomPrice;
-
-    @Column(name = "room_extra_price")
-    private Integer roomExtraPrice;
-
-    @Column(name = "room_size")
-    private Integer roomSize;
-
-    @Column(name = "room_smoke_yn")
-    private String roomSmokeYn;
-
-    @Column(name = "room_bath_yn")
-    private String roomBathYn;
 
 
     @Column(name = "reg_id")

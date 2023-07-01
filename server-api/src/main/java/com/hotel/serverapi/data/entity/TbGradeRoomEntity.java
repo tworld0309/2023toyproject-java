@@ -1,6 +1,6 @@
 package com.hotel.serverapi.data.entity;
 
-
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.CreatedBy;
@@ -9,9 +9,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import jakarta.persistence.*;
-
 import java.time.LocalDate;
+
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
@@ -21,14 +20,25 @@ import java.time.LocalDate;
 @ToString
 @Getter
 @Entity
-@Table(name = "TB_PRICE", schema = "hotel")
-public class TbPriceEntity {
-    @Column(name = "item_cd")
+@Table(name = "TB_GRADE_ROOM", schema = "hotel")
+public class TbGradeRoomEntity {
     @Id
-    private String itemCd;
+    @Column(name = "reservation_date")
+    private String reservationDate;
 
-    @Column(name = "price")
-    private Integer price;
+    @Id
+    @Column(name = "hotel_cd")
+    private String hotelCd;
+
+    @Id
+    @Column(name = "room_grade_cd")
+    private String roomGradeCd;
+
+    @Column(name = "total_cnt")
+    private Integer totalCnt;
+
+    @Column(name = "reserved_cnt")
+    private Integer reservedCnt;
 
 
     @Column(name = "reg_id")

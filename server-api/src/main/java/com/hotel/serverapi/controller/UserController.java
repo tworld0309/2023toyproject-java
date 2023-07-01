@@ -1,5 +1,6 @@
 package com.hotel.serverapi.controller;
 
+import com.hotel.serverapi.data.dto.common.CommonResDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
@@ -30,7 +31,7 @@ public class UserController {
     @GetMapping("/cust")
     @Hidden
     @Operation(description = "UserList 조회하기")
-    public List<TbUserResDTO> userList(){
+    public CommonResDTO userList(){
         return userService.getUserList();
     }
 

@@ -27,11 +27,6 @@ public class TbUserEntity {
     @Column(name = "cust_id")
     private String custId;
 
-    @OneToMany(fetch=FetchType.LAZY )
-    @ToString.Exclude
-    @Builder.Default
-    private List<TbReservationEntity> child = new ArrayList<>();
-
     @Column(name = "cust_password")
     private String custPassword;
 
@@ -59,12 +54,6 @@ public class TbUserEntity {
     @Column(name = "cust_type_cd")
     private String custTypeCd;
 
-    @Column(name = "cust_passport")
-    private String custPassport;
-
-    @Column(name = "cust_password_valid_dt")
-    private LocalDate custPasswordValidDt;
-
     @Column(name = "cust_address")
     private String custAddress;
 
@@ -73,6 +62,7 @@ public class TbUserEntity {
 
     @Column(name = "cust_zipcode")
     private String custZipcode;
+
 
     @Column(name = "reg_id")
     @CreatedBy

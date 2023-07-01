@@ -1,4 +1,4 @@
-package com.hotel.serverapi.dto;
+package com.hotel.serverapi.data.dto.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

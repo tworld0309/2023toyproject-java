@@ -18,7 +18,13 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: ENC(TW5Ru+JEnQXN78acqNe4OQP1W3W8pmPZ)
     password: ENC(kaKrvVahaZiiyYNDM7xCh5M3DPyVAtiy)
-    url: ENC(orAfzV4Q6NOi+SsFCpCLV0KSkNcHbkq00r2tmFCR7vfQ4TnF69svWQIFdp6ELiAu)
+    #url: ENC(orAfzV4Q6NOi+SsFCpCLV0KSkNcHbkq00r2tmFCR7vfQ4TnF69svWQIFdp6ELiAu) # hotel
+    url: ENC(B0/duOmPxbanH1Q2PgGhVpZedh1CzkJO2I2OPJe1/qcjDxI+Bn9Ec6zLGNMMPBLcj+67B6ad+zI=) # hotel_230630
+#  datasource:    # entity, dto 생성을 위한 임시 DB 정보
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    username: root
+#    password: root
+#    url: jdbc:mysql://localhost:3366?useSSL=false&allowPublicKeyRetrieval=true # mysql
   jpa:
     hibernate:
       ddl-auto: none
@@ -86,7 +92,25 @@ springdoc:
   override-with-generic-response: false # Default 응답 메시지(@ControllerAdvice) 제외
   default-produces-media-type: application/json
 
+---
+
+spring:
+  profiles:
+    active: local
 logging:
+  config: classpath:logback-${spring.profiles.active}.xml
+  level:
+    org: INFO
+    com: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  config: classpath:logback-${spring.profiles.active}.xml
   pattern:
     file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
   file:
@@ -97,5 +121,4 @@ logging:
       max-history: 30
   level:
     org: INFO
-    com: INFO
-    cf: DEBUG
+    com: DEBUG

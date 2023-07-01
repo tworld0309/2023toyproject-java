@@ -1,5 +1,41 @@
+plugins {
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+}
+
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
+
+asciidoctor {
+    dependsOn test
+    inputs.dir snippetsDir
+}
+
+asciidoctor.doFirst {
+    delete file('src/main/resources/static/docs')
+}
+
+bootJar {
+    dependsOn asciidoctor
+    copy {
+        from "${asciidoctor.outputDir}"
+        into 'BOOT-INF/classes/static/docs'
+    }
+}
+
+task copyDocument(type: Copy) {
+    dependsOn asciidoctor
+    from file("build/docs/asciidoc")
+    into file("src/main/resources/static/docs")
+}
+
+
+
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation('org.springframework.boot:spring-boot-starter-web')
+
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 
 }
 
@@ -11,3 +47,5 @@ tasks.jar {
 
 
 tasks.register('prepareKotlinBuildScriptModel') {}
+
+
