@@ -1,14 +1,11 @@
 package com.hotel.serverbatch.config;
 
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.jdbc.support.JdbcTransactionManager;
 
 import javax.sql.DataSource;
 
@@ -28,7 +25,7 @@ public class DataSourceConfig {
     private String driverClassName;
 
     @Bean
-    public DataSource getDataSource() {
+    public DataSource batchDataSource() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(driverClassName);
         dataSourceBuilder.url(url);
@@ -38,7 +35,8 @@ public class DataSourceConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManagerApp(@Qualifier("getDataSource") DataSource dataSource) {
-        return new DataSourceTransactionManager(dataSource);
+    public JdbcTransactionManager batchTransactionManager(DataSource dataSource) {
+        return new JdbcTransactionManager(dataSource);
     }
+
 }
