@@ -38,7 +38,7 @@ jobs:
           username: ubuntu
           host: ${{ secrets.HOST }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "./server-api/build/libs/*.jar, ./server-batch/build/libs/*.jar"
+          source: "server-api/build/libs/server-api-1.0.0.jar, server-batch/build/libs/server-batch-1.0.0.jar"
           target: "/app/hotel-mono-reservation"
           strip_components: 2
           
