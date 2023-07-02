@@ -52,7 +52,9 @@ jobs:
 #           key: ${{ secrets.PRIVATE_KEY }}
 #           source: "deploy.sh"
 #           target: "/home/ubuntu/deploy"
-
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
       - name: Execute Server Init Script
         uses: appleboy/ssh-action@master
         with:
