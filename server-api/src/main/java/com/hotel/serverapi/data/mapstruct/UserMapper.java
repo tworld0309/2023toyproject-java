@@ -21,5 +21,6 @@ public interface UserMapper {
 
     List<TbUserResDTO> toDtoList(List<TbUserEntity> entityList);
 
+
     //List<TbUserEntity> toEntityList(List<UserSaveReqDTO> dtoList);
 }

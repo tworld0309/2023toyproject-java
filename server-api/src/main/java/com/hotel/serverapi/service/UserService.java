@@ -11,8 +11,6 @@ import com.hotel.serverapi.data.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -52,4 +50,11 @@ public class UserService {
         userRepository.saveUserGradeInfo(dto);
     }
 
+    /**
+     * Method :  getUserReservationAssignList
+     * Description : 예약한 호텔/객실 목록 조회
+     **/
+    public CommonResDTO getUserReservationAssignList() {
+        return CommonResDTO.of(userRepository.getUserReservationAssignList());
+    }
 }
