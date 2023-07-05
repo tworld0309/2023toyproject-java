@@ -1,5 +1,6 @@
 package com.hotel.serverapi.data.repository;
 
+import com.hotel.serverapi.data.dto.request.TbUserReservationAssignListReqDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
@@ -18,4 +19,6 @@ public interface UserRepositoryCustom {
     void saveUserGradeInfo(UserGradeReqSaveDto dto);
 
     List<TbUserReservationAssignListResDTO> getUserReservationAssignList();
+
+    TbUserReservationAssignListResDTO getUserReservationAssignInfo(TbUserReservationAssignListReqDTO dto);
 }

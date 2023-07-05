@@ -1,5 +1,6 @@
 package com.hotel.serverapi.data.repository;
 
+import com.hotel.serverapi.data.dto.request.TbUserReservationAssignListReqDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
@@ -71,7 +72,6 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
                 .set(QTbUserEntity.tbUserEntity.custGradeCd, dto.getCustGradeCd())
                 .where(QTbUserEntity.tbUserEntity.custId.eq(dto.getCustId()))
                 .execute();
-        ;
     }
 
     /**
@@ -102,6 +102,38 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
                 .from(QTbReservationEntity.tbReservationEntity)
                 .leftJoin(QTbUserEntity.tbUserEntity).on(QTbUserEntity.tbUserEntity.custId.eq(QTbReservationEntity.tbReservationEntity.custId)).fetchJoin()
                 .fetch()
+                ;
+    }
+
+    /**
+     * Method :  getUserReservationAssignInfo
+     * Description : 예약한 호텔/객실 상세 정보 조회
+     **/
+    @Override
+    public TbUserReservationAssignListResDTO getUserReservationAssignInfo(TbUserReservationAssignListReqDTO dto) {
+        return jpaQueryFactory.select(Projections.fields(TbUserReservationAssignListResDTO.class
+                                , QTbReservationEntity.tbReservationEntity.reservationId.as("reservationId")
+                                , QTbReservationEntity.tbReservationEntity.custId.as("custId")
+                                , QTbUserEntity.tbUserEntity.custNm.as("custNm")
+                                , QTbReservationEntity.tbReservationEntity.hotelCd.as("hotelCd")
+                                , QTbReservationEntity.tbReservationEntity.roomGradeCd.as("roomGradeCd")
+                                , QTbReservationEntity.tbReservationEntity.paymentCd.as("paymentCd")
+                                , QTbReservationEntity.tbReservationEntity.paymentDt.as("paymentDt")
+                                , QTbReservationEntity.tbReservationEntity.paymentPrice.as("paymentPrice")
+                                , QTbReservationEntity.tbReservationEntity.invoice.as("invoice")
+                                , QTbReservationEntity.tbReservationEntity.specialRequest.as("specialRequest")
+                                , QTbReservationEntity.tbReservationEntity.vaildYn.as("vaildYn")
+                                , QTbReservationEntity.tbReservationEntity.statusCd.as("statusCd")
+                                , QTbReservationEntity.tbReservationEntity.regId.as("regId")
+                                , QTbReservationEntity.tbReservationEntity.regDt.as("regDt")
+                                , QTbReservationEntity.tbReservationEntity.modId.as("modId")
+                                , QTbReservationEntity.tbReservationEntity.modDt.as("modDt")
+                        )
+                )
+                .from(QTbReservationEntity.tbReservationEntity)
+                .leftJoin(QTbUserEntity.tbUserEntity).on(QTbUserEntity.tbUserEntity.custId.eq(QTbReservationEntity.tbReservationEntity.custId)).fetchJoin()
+                .where(QTbReservationEntity.tbReservationEntity.reservationId.eq(dto.getReservationId()))
+                .fetchOne()
                 ;
     }
 }
