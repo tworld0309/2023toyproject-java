@@ -2,10 +2,12 @@ package com.hotel.serverapi.service;
 
 
 import com.hotel.serverapi.data.dto.common.CommonResDTO;
+import com.hotel.serverapi.data.dto.request.TbUserReservationAssignListReqDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
 import com.hotel.serverapi.data.dto.response.TbUserResDTO;
+import com.hotel.serverapi.data.dto.response.TbUserReservationAssignListResDTO;
 import com.hotel.serverapi.data.mapstruct.UserMapper;
 import com.hotel.serverapi.data.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -56,5 +58,13 @@ public class UserService {
      **/
     public CommonResDTO getUserReservationAssignList() {
         return CommonResDTO.of(userRepository.getUserReservationAssignList());
+    }
+
+    /**
+     * Method :  getUserReservationAssignInfo
+     * Description : 예약한 호텔/객실 상세 정보 조회
+     **/
+    public TbUserReservationAssignListResDTO getUserReservationAssignInfo(TbUserReservationAssignListReqDTO dto) {
+        return userRepository.getUserReservationAssignInfo(dto);
     }
 }

@@ -1,10 +1,12 @@
 package com.hotel.serverapi.controller;
 
 import com.hotel.serverapi.data.dto.common.CommonResDTO;
+import com.hotel.serverapi.data.dto.request.TbUserReservationAssignListReqDTO;
 import com.hotel.serverapi.data.dto.request.UserGradeReqSaveDto;
 import com.hotel.serverapi.data.dto.request.UserReqDto;
 import com.hotel.serverapi.data.dto.response.TbUserGradeResDTO;
 import com.hotel.serverapi.data.dto.response.TbUserResDTO;
+import com.hotel.serverapi.data.dto.response.TbUserReservationAssignListResDTO;
 import com.hotel.serverapi.service.UserService;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
@@ -75,5 +77,18 @@ public class UserController {
     @Operation(description = "예약한 호텔/객실 목록 조회")
     public CommonResDTO getUserReservationAssignList(){
         return userService.getUserReservationAssignList();
+    }
+
+    /**
+     * Method :  getUserReservationAssignInfo
+     * Description : 예약한 호텔/객실 상세 정보 조회
+     **/
+    @GetMapping("/user/reservation/assign/{reservationId}")
+    @Operation(description = "예약한 호텔/객실 목록 조회")
+    public TbUserReservationAssignListResDTO getUserReservationAssignInfo(@PathVariable String reservationId){
+        TbUserReservationAssignListReqDTO dto = TbUserReservationAssignListReqDTO.builder()
+                        .reservationId(reservationId)
+                        .build();
+        return userService.getUserReservationAssignInfo(dto);
     }
 }
