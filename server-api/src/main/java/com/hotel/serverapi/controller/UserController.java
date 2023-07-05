@@ -13,8 +13,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 
 @RestController
 @RequiredArgsConstructor
@@ -69,4 +67,13 @@ public class UserController {
         userService.saveUserGradeInfo(userGradeRequestSaveDto);
     }
 
+    /**
+     * Method :  getUserReservationAssignList
+     * Description : 예약한 호텔/객실 목록 조회
+     **/
+    @GetMapping("/user/reservation/assigns")
+    @Operation(description = "예약한 호텔/객실 목록 조회")
+    public CommonResDTO getUserReservationAssignList(){
+        return userService.getUserReservationAssignList();
+    }
 }
